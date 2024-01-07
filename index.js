@@ -1,4 +1,4 @@
-// note There is a bug when ghost move the ball alone. The ball wrapping is not taken in consideration. The ball can disapear outside the canvas/viewport. 
+// note There is a bug when ghost move the ball alone. The ball wrapping is not taken in consideration. The ball can disapear outside the canvas/viewport.
 // Maybe not that strange / coulb be a "feature" (not a bug)😉, after all, Ghost can move trought wall !!! (or unknow dimention: ex.: out of canvas size)
 // Stop pushing 'g' and you could get back the ball with a little bit of effort, maybe?
 
@@ -32,29 +32,29 @@ document.addEventListener("keypress", (e) =>{ // keypress don't work with some k
 }, true);
 */
 
-document.addEventListener("keydown", (e) =>{ 
+document.addEventListener("keydown", (e) =>{
     switch(e.key){
-        case "w": 
+        case "w":
         case "ArrowUp": {
-           ball.moveUp = true;
+            ball.moveUp = true;
             break;
         }
-        case "a": 
+        case "a":
         case "ArrowLeft": {
             ball.moveLeft = true;
-             break;
-         }
-         case "s": 
-         case "ArrowDown": {
+            break;
+        }
+        case "s":
+        case "ArrowDown": {
             ball.moveDown = true;
-             break;
-         }
-         case "d": 
-         case "ArrowRight": {
+            break;
+        }
+        case "d":
+        case "ArrowRight": {
             ball.moveRight = true;
-             break;
-         }
-         case "Escape": {
+            break;
+        }
+        case "Escape": {
             gameLoopOn = !gameLoopOn; // toggle/switch between true and false. How i can forget how to do that for Christ sake.
             if(gameLoop && !gameLoopId){
                 gameLoopId = setInterval(gameLoop, fps);
@@ -79,28 +79,28 @@ document.addEventListener("keydown", (e) =>{
     }
 }, true);
 
-document.addEventListener("keyup", (e) =>{ 
+document.addEventListener("keyup", (e) =>{
     switch(e.key){
-        case "w": 
+        case "w":
         case "ArrowUp": {
             ball.moveUp = false;
-             break;
-         }
-         case "a": 
-         case "ArrowLeft": {
+            break;
+        }
+        case "a":
+        case "ArrowLeft": {
              ball.moveLeft = false;
-              break;
-          }
-          case "s": 
-          case "ArrowDown": {
-             ball.moveDown = false;
-              break;
-          }
-          case "d": 
-          case "ArrowRight": {
-             ball.moveRight = false;
-              break;
-          }
+             break;
+        }
+        case "s":
+        case "ArrowDown": {
+            ball.moveDown = false;
+            break;
+        }
+        case "d":
+        case "ArrowRight": {
+            ball.moveRight = false;
+            break;
+        }
         default: {
             //console.log(e.key);
         }
@@ -193,7 +193,7 @@ class Ball{
         this.ctx.fill();
     }
     changeSpeed(e){
-        this.speed = parseInt(e.target.value, 10); // numberfield return string??? WTF 
+        this.speed = parseInt(e.target.value, 10); // numberfield return string??? WTF
     }
 }// end class Ball
 var ball = new Ball(20);
